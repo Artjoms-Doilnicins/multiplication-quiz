@@ -1,0 +1,119 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background: linear-gradient(135deg, #6e7e8f, #1d2a3a);
+}
+
+.app {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.856);
+	padding: 40px 50px;
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 450px;
+	backdrop-filter: blur(10px);
+}
+
+h1 {
+	font-size: 30px;
+	color: #333;
+	margin-bottom: 20px;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+}
+
+.question {
+	font-size: 24px;
+	font-weight: 500;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.user-input {
+	min-width: 300px;
+	padding: 12px;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: 2px solid #ccc;
+	transition: all 0.3s ease;
+	background-color: #f9f9f9;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-input:focus {
+	outline: none;
+	border-color: #4caf50;
+	background-color: #e8f9e8;
+}
+
+.submit-btn {
+	padding: 15px 25px;
+	font-size: 18px;
+	border-radius: 12px;
+	border: none;
+	background-color: #4caf50;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+	background-color: #cccccc;
+	cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+	background-color: #45a049;
+	transform: translateY(-3px);
+}
+
+.score-text {
+	font-size: 20px;
+	font-weight: 500;
+	color: #333;
+}
+
+.result-text {
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+}
+
+.next-btn {
+	padding: 15px 25px;
+	font-size: 18px;
+	border-radius: 12px;
+	border: none;
+	background-color: #2196f3;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.next-btn:hover {
+	background-color: #1971be;
+	transform: translateY(-3px);
+}
