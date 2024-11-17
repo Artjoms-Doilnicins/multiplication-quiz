@@ -1,5 +1,7 @@
 # Multiplication Quiz
 
+[https://artjoms-doilnicins.github.io/multiplication-quiz/](https://artjoms-doilnicins.github.io/multiplication-quiz/)
+
 A fun and interactive quiz to practice multiplication skills, track your score, and challenge yourself.
 
 This project combines **HTML** , **CSS** , and **JavaScript**  to create an engaging and interactive multiplication quiz. The design is user-friendly, with real-time feedback and score tracking.
