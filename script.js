@@ -4,10 +4,13 @@ const userInputEl = document.querySelector('.user-input');
 const submitBtnEl = document.querySelector('.submit-btn');
 const scoreEl = document.querySelector('.score');
 const resultEl = document.querySelector('.result-text');
+const answerEl = document.querySelector('.answer');
 
 let nextBtn = null;
+let calculationResult = null;
 let score = parseInt(localStorage.getItem('yourScore') || 0);
 scoreEl.textContent = score;
+userInputEl.focus();
 
 const generateQuestion = () => {
 	const num1 = Math.round(Math.random() * 20 + 1);
@@ -16,6 +19,8 @@ const generateQuestion = () => {
 
 	const question = `What is ${num1} * ${num2} ?`;
 	questionEl.textContent = question;
+	answerEl.style.display = 'none';
+	return calculationResult;
 };
 generateQuestion();
 
@@ -42,10 +47,13 @@ const submit = () => {
 		resultEl.textContent = '❌ WRONG!';
 		score--;
 		scoreEl.textContent = score;
+		answerEl.style.display = 'block';
+		answerEl.textContent = `Correct answer is: ${calculationResult}`;
 		submitBtnEl.setAttribute('disabled', '');
 		createNextBtn();
 		localStorage.setItem('yourScore', score);
 	}
+	nextBtn.focus();
 
 	nextBtn.addEventListener('click', () => {
 		generateQuestion();
@@ -53,7 +61,11 @@ const submit = () => {
 		resultEl.textContent = null;
 		submitBtnEl.removeAttribute('disabled', '');
 		nextBtn.remove();
+		userInputEl.focus();
 	});
 };
 
-submitBtnEl.addEventListener('click', submit);
+boxEl.addEventListener('submit', (event) => {
+	event.preventDefault();
+	submit();
+});
